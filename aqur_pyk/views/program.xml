@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Program Aqur Action,Form,Tree View -->
+        <record id="program_aqur_tree_view" model="ir.ui.view">
+            <field name="name">Program Aqur</field>
+            <field name="model">program.aqur</field>
+            <field name="arch" type="xml">
+                <tree string="Program Aqur">
+                    <field name="namaProgram"/>
+                    <field name="departemenProgram"/>
+                    <field name="penanggungJawabProgram"/>
+                    <field name="tglMulai"/>
+                    <field name="tglBerakhir"/>
+                    <field name="berlanjutkah" widget="toggle_button"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="program_aqur_form_view" model="ir.ui.view">
+            <field name="name">Program Aqur</field>
+            <field name="model">program.aqur</field>
+            <field name="arch" type="xml">
+                <form string="Program Aqur">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="namaProgram"/>
+                                <field name="departemenProgram"/>
+                                <field name="penanggungJawabProgram"/>
+                            </group>
+                            <group>
+                                <field name="tglMulai"/>
+                                <field name="tglBerakhir"/>
+                                <field name="berlanjutkah" widget="toggle_button"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Program Level">
+                                <field name="programLevelID"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="program_aqur_action_view" model="ir.actions.act_window">
+            <field name="name">Program Aqur</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">program.aqur</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                    "Belum ada program yang terdaftar"
+                </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+                "Silahkan diisi melalui menu program diatas
+            </p>
+            </field>
+        </record>
+
+
+        <!-- Program level aqur action, form, tree view -->
+        <record id="program_level_tree_view" model="ir.ui.view">
+            <field name="name">Program Level</field>
+            <field name="model">program.level</field>
+            <field name="arch" type="xml">
+                <tree string="Program Level">
+                    <field name="levelProgram"/>
+                    <field name="namaLevel"/>
+                    <field name="keteranganLevel"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="program_level_form_view" model="ir.ui.view">
+            <field name="name">Program Level</field>
+            <field name="model">program.level</field>
+            <field name="arch" type="xml">
+                <form string="Program Level">
+                    <sheet>
+                        <group>
+                            <field name="levelProgram"/>
+                            <field name="namaLevel"/>
+                            <field name="keteranganLevel"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="program_level_action_view" model="ir.actions.act_window">
+            <field name="name">Program Level</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">program.level</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                    Silahkan isikan level dari program yang bersangkutan
+                </p>
+                <p>
+                    <!-- More details about what a user can do with this object will be OK -->
+                    Level program sebaiknya diinput melalui menu Program Aqur
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

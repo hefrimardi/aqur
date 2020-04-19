@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+        <menuitem id="aqur_menu_utama" name="Aqur Payakumbuh" sequence="5"/>
+
+        <!-- Submenu Utama -->
+        <menuitem id="aqur_menu_pbm"
+                  name="PBM"
+                  parent="aqur_menu_utama"
+                  sequence="1"/>
+        <menuitem id="aqur_menu_konfigurasi"
+                  name="Konfigurasi"
+                  parent="aqur_menu_utama"
+                  sequence="2"/>
+
+        <!-- Submenu PBM Aqur -->
+        <menuitem id="aqur_menu_absensi_pbm"
+                  name="Absensi PBM"
+                  parent="aqur_menu_pbm"
+                  action="absensi_pbm_action_view"
+                  sequence="1"/>
+        <menuitem id="aqur_menu_kalender_kelas"
+                  name="Kalender Kelas"
+                  parent="aqur_menu_pbm"
+                  action="kalender_kelas_action_view"
+                  sequence="2"/>
+        <!-- Submenu Kategori Penerimaan Siswa Baru -->
+        <menuitem id="penerimaan_murid_baru"
+                  name="Penerimaan Murid Baru"
+                  parent="aqur_menu_pbm"
+                  sequence="3"/>
+        <menuitem id="aqur_menu_pendaftaran_murid_baru"
+                  name="Pendaftaran"
+                  parent="penerimaan_murid_baru"
+                  action="absensi_pbm_action_view"
+                  sequence="4"/>
+        <menuitem id="aqur_menu_penentuan_kelas"
+                  name="Penetapan Kelas"
+                  parent="penerimaan_murid_baru"
+                  action="absensi_pbm_action_view"
+                  sequence="5"/>
+
+
+        <!-- Submenu Konfigurasi Aqur -->
+        <menuitem id="aqur_menu_program_aqur"
+                  name="Daftar Program"
+                  parent="aqur_menu_konfigurasi"
+                  action="program_aqur_action_view"
+                  sequence="1"/>
+        <menuitem id="aqur_menu_daftar_kelas"
+                  name="Daftar Kelas"
+                  parent="aqur_menu_konfigurasi"
+                  action="daftar_kelas_action_view"
+                  sequence="2"/>
+        <menuitem id="aqur_menu_daftar_ruangan"
+                  name="Daftar Ruangan"
+                  parent="aqur_menu_konfigurasi"
+                  action="daftar_ruangan_action_view"
+                  sequence="3"/>
+        <menuitem id="aqur_menu_kategori_kelas"
+                  name="Kategori Kelas"
+                  parent="aqur_menu_konfigurasi"
+                  action="kategori_kelas_action_view"
+                  sequence="4"/>
+
+    </data>
+</odoo>

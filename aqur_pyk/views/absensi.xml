@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="absensi_pbm_tree_view" model="ir.ui.view">
+            <field name="name">Absensi PBM</field>
+            <field name="model">absensi.pbm</field>
+            <field name="arch" type="xml">
+                <tree string="Absensi PBM">
+                    <field name="namaKelas" options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                    <field name="tanggalAbsensi"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="absensi_pbm_form_view" model="ir.ui.view">
+            <field name="name">Absensi PBM</field>
+            <field name="model">absensi.pbm</field>
+            <field name="arch" type="xml">
+                <form string="Absensi PBM">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="namaKelas"
+                                       options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                                <field name="tanggalAbsensi"/>
+                            </group>
+                            <group>
+                                <field name="namaGuru" readonly="1" force_save="1"
+                                       options="{'no_create': True, 'no_create_edit': True}"/>
+                                <field name="guruPengganti"
+                                       options="{'no_create': True, 'no_create_edit': True}"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Daftar Kehadiran Murid">
+                                <field name="absensiDetailID">
+                                    <tree editable="bottom">
+                                        <field name="namaMurid"
+                                               options="{'no_quick_create':True, 'no_create_edit':True,'no_open':True}"/>
+                                        <field name="statusKehadiran"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="absensi_pbm_action_view" model="ir.actions.act_window">
+            <field name="name">Absensi PBM</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">absensi.pbm</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                    Belum ada absensi yang terdaftar
+                </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+                Silahkan diinput absensi kelas melalui menu diatas
+            </p>
+            </field>
+        </record>
+
+        <!-- Absensi PBM Detail action, form, tree view -->
+        <record id="absensi_pbm_detail_tree_view" model="ir.ui.view">
+            <field name="name">Absensi PBM Detail</field>
+            <field name="model">absensi.pbm.detail</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="namaMurid"/>
+                    <field name="statusKehadiran" widget="radio"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="absensi_pbm_detail_form_view" model="ir.ui.view">
+            <field name="name">Absensi PBM Detail</field>
+            <field name="model">absensi.pbm.detail</field>
+            <field name="arch" type="xml">
+                <form string="Absensi PBM Detail">
+                    <sheet>
+                        <group>
+                            <field name="namaMurid"/>
+                            <field name="statusKehadiran" widget="radio"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="absensi_pbm_detail_action_view" model="ir.actions.act_window">
+            <field name="name">Absensi PBM Detail</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">absensi.pbm.detail</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+                Belum ada murid yang hadir
+              </p><p>
+                <!-- More details about what a user can do with this object will be OK -->
+                Silahkan diinput melalui menu diatas
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

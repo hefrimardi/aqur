@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_aqur_pyk_program,access_aqur_pyk_program,aqur_pyk.model_program_aqur,,1,1,1,1
+access_aqur_pyk_program_level,access_aqur_pyk_program_level,aqur_pyk.model_program_level,,1,1,1,1
+access_aqur_pyk_daftar_kelas,access_aqur_pyk_daftar_kelas,aqur_pyk.model_daftar_kelas,,1,1,1,1
+access_aqur_pyk_jadwal_kelas,access_aqur_pyk_jadwal_kelas,aqur_pyk.model_jadwal_kelas,,1,1,1,1
+access_aqur_pyk_daftar_murid_kelas,access_aqur_pyk_daftar_murid_kelas,aqur_pyk.model_daftar_murid_kelas,,1,1,1,1
+access_aqur_pyk_daftar_ruangan,access_aqur_pyk_daftar_ruangan,aqur_pyk.model_daftar_ruangan,,1,1,1,1
+access_aqur_pyk_absensi_pbm,access_aqur_pyk_absensi_pbm,aqur_pyk.model_absensi_pbm,,1,1,1,1
+access_aqur_pyk_absensi_pbm_detail,access_aqur_pyk_absensi_pbm_detail,aqur_pyk.model_absensi_pbm_detail,,1,1,1,1
+access_aqur_pyk_kategori_kelas,access_aqur_pyk_kategori_kelas,aqur_pyk.model_kategori_kelas,,1,1,1,1
+access_aqur_pyk_kalender_kelas,access_aqur_pyk_kalender_kelas,aqur_pyk.model_kalender_kelas,,1,1,1,1

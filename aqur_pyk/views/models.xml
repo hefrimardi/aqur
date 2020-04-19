@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+
+        <!-- Inherit contact Form View tambah field kategori kontak -->
+        <record id="aqur_kontak_inherit" model="ir.ui.view">
+            <field name="name">aqur_kontak_inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="type" position="before">
+                    <field name="kategoriKontak"/>
+                </field>
+                <xpath expr="//field[@name='mobile']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='company_type']" position="attributes">
+                    <attribute name="default">'person'</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="aqur_karyawan_inherit" model="ir.ui.view">
+            <field name="name">daftar_karyawan_inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Daftar Kelas">
+                        <field name="kelasID"
+                               readonly="1"
+                               options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"
+                               domain="[('berlanjutkah','=',1)]"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="aqur_kontak_daftar_kelas_inherit" model="ir.ui.view">
+            <field name="name">aqur_kontak_daftar_kelas_inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//notebook" position="inside">
+                    <page string="Daftar Kelas">
+                        <field name="daftarKelasID"
+                               options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                    </page>
+                    <page string="Pembayaran SPP">
+
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>
